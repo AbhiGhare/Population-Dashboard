@@ -1,0 +1,36 @@
+<div class="parent">
+
+    <div class="child pie" [chart]="pipeChart">
+  
+    </div>
+    <div class="child line" [chart]="lineChart">
+  
+    </div>
+  
+    <div class="child line" [chart]="barChart">
+  
+    </div>
+
+    
+
+<!-- <figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Map showing how a TopoJSON map source is handled and how the built-in
+        orthographic projection is used.
+    </p>
+</figure> -->
+
+<button (click)="all()">All</button>  
+
+<button (click)="onClick()">Update data</button> 
+<button (click)="onclick2()">Update data 2</button>  
+
+<highcharts-chart id="container"  
+[Highcharts]="Highcharts"  
+[constructorType]="chartConstructor"  
+[options]="chartOptions"  
+[(update)]="updateFlag"  
+style="width: 100%; height: 400px; display: block;">  
+</highcharts-chart>  
+  </div>

@@ -1,0 +1,113 @@
+
+.dash{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    border: 1px solid black;
+    background-color: #061325;
+
+}
+.left{
+    /* position: absolute; */
+    /* border: 1px solid black; */
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    /* background-color: #061325; */
+    color: #8d98a9;
+    z-index: 2;
+}
+.left h2{
+    text-align: center;
+}
+.left .Continent{
+    margin:20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: 20px;
+}
+.left .Continent span{
+    margin: 20px;
+    cursor: pointer;
+}
+
+.left ul{
+    /* border: 1px solid;
+    padding: 10px; */
+    list-style: none;
+    position: absolute;
+top: 141px;
+left: 70px;
+background-color: #8d98a9;
+/* border-radius: 5px; */
+border-top-right-radius: 5px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+.left ul::before{
+    position: absolute;
+    content: "";
+    margin-left: 114px;
+    border-top: 5px solid #8d98a9;
+    border-left: 11px solid transparent;
+    border-right: 12px solid #8d98a9;
+    border-bottom: 17px solid transparent;
+    left: -129px;
+}
+.left ul li{
+    /* background-color: aquamarine; */
+    color: white;
+    margin: 5px 0px;
+    padding: 5px;
+    /* color: aliceblue; */
+}
+.center{
+    width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+position: absolute;
+}
+.center .Wmap{
+    width: 99.9vw;
+height: 100vh;
+/* padding: 20px; */
+position: absolute;
+left: -42px;
+}
+.center .bottom{
+    width: 500px;
+/* height: 40%; */
+display: flex;
+position: absolute;
+flex-direction: column;
+border-radius: 10px;
+right: 0;
+}
+.top5{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid; */
+}
+.right{
+    width: 99.9vw;
+    height: 332px;
+    display: flex;
+    /* flex-direction: column; */
+    position: absolute;
+    bottom: 0;
+    overflow: scroll;
+}
+.rTop5{
+    /* width: 100%; */
+    height: 96%;
+   display: flex;
+   margin: 10px;
+border-radius: 10px;
+/* overflow: scroll; */
+    /* border: 1px solid black; */
+    /* margin: 10px; */
+    /* margin-right: 10px; */
+}

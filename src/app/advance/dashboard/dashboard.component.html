@@ -1,0 +1,98 @@
+<div class="dash">
+    <div class="left">
+        <!--world population,area,GDP and water resource dashboard -->
+        <!-- <br>
+        <br>
+        <button (click)="all()">All</button>  
+
+        <button (click)="onClick()">Update data</button> 
+        <button (click)="onclick2()">Update data 2</button>   -->
+
+        <h2>world population,Area, <br> GDP and water <br> resource dashboard</h2>
+        <div class="Continent">
+            <span (click)="toggle()"><i class="fa-solid fa-bars"></i></span> <!--Continent-->
+            <span (click)="all()"><i class="fa-sharp fa-solid fa-globe"></i></span>
+            <span (click)="togglegraph()"><i class="fa-sharp fa-solid fa-chart-line"></i></span>
+        <span (click)="toggleSideG()"><i class="fa-solid fa-chart-pie"></i></span>
+        </div>
+        <!-- <button >show</button> -->
+        
+        <ul *ngIf="show">
+            <li (click)="africa()">Africa</li>
+            <li (click)="asia()">Asia</li>
+            <li (click)="europe()">Europe</li>
+            <li (click)="northAmerica()">North America</li>
+            <li (click)="southAmerica()">South America</li>
+            <li (click)="oceania()">Oceania</li>
+            <!-- <li (click)="antarctica()">Antarctica</li> -->
+        </ul>
+    </div>
+    <div class="center">
+        <div class="Wmap">
+            <!-- map world -->
+            <highcharts-chart id="container"  
+                [Highcharts]="Highcharts"  
+                [constructorType]="chartConstructor"  
+                [options]="chartOptions"  
+                [(update)]="updateFlag"  
+                style="width: 100%; height: 100%; display: block ; ">  
+            </highcharts-chart>  
+        </div>
+        <div class="bottom" *ngIf="showSideG">
+            <div class="top5">
+                <!-- top 5 country population wise -->
+                <highcharts-chart class="child line" [Highcharts]="Highcharts" [options]="Top5Population" style="width: 100%; height: 200px; display: block; ">
+  
+                </highcharts-chart>
+            </div>
+            <div class="top5" >
+                <!-- top 5 country Area wise -->
+                <highcharts-chart class="child line" [Highcharts]="Highcharts" [options]="Top5Area" style="width: 100%; height: 200px; display: block; ">
+  
+                </highcharts-chart>
+            </div>
+        </div>
+    </div>
+    <div class="right" *ngIf="showGraph">
+        <div class="rTop5"  >
+            
+            <!-- top 5 country GDP (% GDP growth) -->
+            <highcharts-chart class="child line" [Highcharts]="Highcharts" [options]="Top5GDP" style="width: 500px; height: 95%; " >
+  
+            </highcharts-chart>
+            <highcharts-chart class="child line"[Highcharts]="Highcharts" [options]="Top5GDP_Growth" style="width: 500px; height: 95%; " >
+  
+            </highcharts-chart>
+        </div>
+        <div class="rTop5" >
+            <!-- top 5 country for water resource -->
+            <highcharts-chart class="child line"[Highcharts]="Highcharts" [options]="Top5WaterKM" style="width: 500px; height: 95%; " >
+  
+            </highcharts-chart>
+            <highcharts-chart class="child line"[Highcharts]="Highcharts" [options]="Top5WaterPr" style="width: 500px; height: 95%; " >
+  
+            </highcharts-chart>
+        </div>
+        <div class="rTop5"  >
+            <!-- %GDP contributed from top % country -->
+            <!-- <div class="child pie" [chart]="GDPpipeChart" style="width: 40%; height: 95%;" >
+  
+            </div> -->
+            <!-- %water resource contributed from top 5 country -->
+            <!-- <div class="child pie" [chart]="WaterpipeChart" style="width: 80%; height: 100%;" >
+  
+            </div> -->
+            <highcharts-chart
+                [Highcharts]="Highcharts"
+                [options]="AllTop5GDP"
+                style="width: 50%; height: 95%; display: block; "
+            ></highcharts-chart>
+
+            <highcharts-chart
+                [Highcharts]="Highcharts"
+                [options]="AllTop5Water"
+                style="width: 50%; height: 95%; display: block; "
+            ></highcharts-chart>
+        </div>
+    </div>
+</div>
